@@ -9,21 +9,38 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <section class="container_display">
+        <div class="info_display">
+            <h1 class="info_title">Mot mystère</h1>
+            <p class="info_text">Si vous voulez en savoir plus sur ce projet ou sur moi-même : <button class="info_btn">Plus d'info</button></p>
+        </div>
+        <div class="box_display">
+            <p class="word">___</p>
+            <div class="box_input">
+                <input type="text" class="btn_input" placeholder="Saisir une lettre">
+                <div class="result">Erreur</div>
+            </div>
+            <div class="box_button">
+                <button class="submit">Essayer</button>
+                <p>Cliquez sur le bouton "Valider" ou appuyez sur la touche "Entrer".</p>
+            </div>
+        </div>
+    </section>
     <aside class="container_aside">
         <div>
             <div class="box_score">
                 <p class="score">Votre score actuel :</p>
                 <div class="box_try">
-                    <h2 class="aside_title"><span class="span_try">Essai(s)</span></h2>
+                    <h2 class="aside_title">Essai(s)</h2>
                     <p class="count_try">0</p>
                 </div>
                 <div class="box_word">
-                    <h2 class="aside_title"><span class="span_word">Mot(s) trouvé(s)</span></h2>
+                    <h2 class="aside_title">Mot(s) trouvé(s)</h2>
                     <p class="count_word">0</p>
                 </div>
             </div>
             <div>
-                <button class="button_reset">Réinitialiser</button>
+                <button class="button_reset">Réinitialiser score</button>
             </div>
         </div>
     </aside>
@@ -37,29 +54,67 @@
             </div>
         </div>
     </section>
-    <section class="container_display">
-        <div class="info_display">
-            <h1 class="info_title">Mot mystère</h1>
-            <p class="info_text">Si vous voulez en savoir plus sur ce projet ou sur moi même : <button class="info_btn">Plus d'info</button></p>
+
+    <!-- MODALS -->
+
+    <!-- WIN -->
+    <section class="container_modal_win">
+        <div class="overlay"></div>
+        <div class="box_modal_win">
+            <h2 class="title_modal"><i class="em em-partying_face" aria-role="presentation" aria-label="FACE WITH PARTY HORN AND PARTY HAT"></i>Félicitations !<i class="em em-partying_face" aria-role="presentation" aria-label="FACE WITH PARTY HORN AND PARTY HAT"></i></h2>
+            <p class="text_modal">Tu as trouvé le mot mystère ! <i class="em em-sunglasses" aria-role="presentation" aria-label="SMILING FACE WITH SUNGLASSES"></i></p>
+            <button class="restart_word">Continuer</button>
         </div>
-        <div class="box_display">
-            <p class="word">___</p>
-            <div class="box_input">
-                <input type="text" class="btn_input" placeholder="Saisir une lettre">
-                <div class="result">Erreur</div> 
-            </div>
-            <div class="box_button">
-                <button class="submit">Valider</button>
-                <p>Cliquez sur le bouton "Valider" ou appuyez sur la touche "Entrer".</p>
+    </section>
+
+    <!-- INFO -->
+    <section class="container_modal_info">
+        <div class="overlay_modal_info"></div>
+        <div class="box_modal_info">
+            <ion-icon class="icon_close" name="close-circle-outline"></ion-icon>
+            <h3>Présentation</h3>
+            <p>Bonjour, je m'appelle <span class="info_name">Frédéric Bétaouaf</span>, j'ai 34 ans, je suis développeur web/web mobile depuis un peu moins d'un an et je me spécialise en <strong>frontend (Javascript/React/Vue)</strong>.</p>
+            <h3>Idée du projet</h3>
+            <p>J'ai conçu ce petit projet "jeu" pour changer des jeux habituels : ("Morpion", "Shi Fu Mi", "Deviner un nombre") que je vois très souvent.</p>
+            <p>J'ai donc codé le jeu de A à Z en y intégrant des fonctionnalités pour que ce soit plus amusant et auto-compétitif :
+                <ul>
+                    <li>Un tableau de score (nombre d'essai et de mot trouvé).</li>
+                    <li>Des données persistantes sur le navigateur pour garder son score même si on part du site.</li>
+                    <li>La possibilité de tous réinitialiser (remettre à 0 les deux compteurs).</li>
+                    <li>La vérification lors de l'envoi de la lettre, pour éviter les fausses manipulations ou erreur de frappe et par conséquent fausser le score.</li>
+                    <li>L'insensibilité a la case pour les lettres (majuscule/minuscule).</li>
+                    <li>La possibilité de pouvoir simplement appuyer sur "Entrer" et rester dans l'emplacement de saisie pour éviter les navettes avec la souris entre la saisie et le bouton validé.</li>
+                </ul>
+            <h3>Amélioration à venir ?</h3>
+            <p>Idée actuelle d'amélioration (liste exhaustive) :
+                <ul>
+                    <li>Un tableau de notre meilleur score</li>
+                    <li>Un niveau de difficulté (un niveau facile, exemple: si on valide la lettre "E", cela valide aussi les autres caractères associés "é, è, ë, ê". Le mode facile permettra également d'éviter les mots comportant un "-")</li>
+                    <li>Plusieurs choix de longueur de mot (exemple: de 2 à 5 mots, de 5 à 7 mots ou 6 mots et plus)</li>
+                    <li>Ajouter encore plus de mots (la liste est de plus de 22 700 mots actuellement)</li>
+                    <li>Et bien d'autres...</li>
+                </ul>
+            <h3>Information sur le jeu</h3>
+            <p>La liste des mots actuels est aux alentours des 22 700 mots, qui correspondent à une partie du dictionnaire Français. J'ai une liste de côté ayant plus de 136 000 mots, mais qu'il faudra que je vérifie avant de l'ajouter.</p>
+            <h3>Design</h3>
+            <p>Concernant l'interface, je ne suis pas designer, mais j'ai voulu créer une interface aux couleurs chaude car je trouve cela plus agréable pour jouer.</p>
+            <h3>Contact</h3>
+            <p>Vous pouvez me contacter directement sur Linkedin. Vous avez le lien en bas à gauche de la page du jeu ou sinon <a href="https://www.linkedin.com/in/frédéric-betaouaf/" target="_blank"><button>cliquez ici</button></a>.</p>
+            <div class="good_game">
+                <p>Amusez-vous bien, en espérant que ce petit moment de détente sur ce jeu vous soit agréable. <i class="em em-slightly_smiling_face" aria-role="presentation" aria-label="SLIGHTLY SMILING FACE"></i></p>
             </div>
         </div>
     </section>
-    <section class="container_modal">
-        <div class="overlay"></div>
-        <div class="box_modal">
-            <h1 class="title_modal"><i class="em em-partying_face" aria-role="presentation" aria-label="FACE WITH PARTY HORN AND PARTY HAT"></i>Félicitation !<i class="em em-partying_face" aria-role="presentation" aria-label="FACE WITH PARTY HORN AND PARTY HAT"></i></h1>
-            <p class="text_modal">Tu as trouvé le mot mystère ! <i class="em em-sunglasses" aria-role="presentation" aria-label="SMILING FACE WITH SUNGLASSES"></i></p>
-            <button class="restart_word">Continuer</button>
+
+    <!-- CONFIRM -->
+    <section class="container_confirm_modal">
+        <div class="overlay_confirm_modal"></div>
+        <div class="box_modal_confirm">
+            <h3>Remettre les scores à 0 ?</h3>
+            <div>
+                <button class="confirm_yes">Oui</button>
+                <button class="confirm_to_cancel">Annuler</button>
+            </div>
         </div>
     </section>
         
