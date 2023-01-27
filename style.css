@@ -1,6 +1,9 @@
-/* --------- */
-/* VARIABLES */
-/* --------- */
+/* ----- */
+/* FONTS */
+/* ----- */
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 /* ------- */
 /* GENERAL */
@@ -28,6 +31,7 @@ body {
     height: 100vh;
     background-image: radial-gradient(circle at 120.71% 50%, #ddffaf 0, #e2fe9d 8.33%, #e7f28b 16.67%, #eae678 25%, #eed764 33.33%, #f0c750 41.67%, #f2b53c 50%, #f4a22b 58.33%, #f68f20 66.67%, #f97b1d 75%, #fc6722 83.33%, #ff512b 91.67%, #ff3837 100%);
 }
+
 
 /* ----- */
 /* ASIDE */
@@ -150,8 +154,11 @@ body {
 }
 
 .container_display .info_title {
-    font-size: 4em;
+    font-family: Dancing Script, sans-serif;
+    font-size: 7em;
     margin-bottom: 10px;
+    color: #FE5629;
+    -webkit-text-stroke: 1px #000;
 }
 
 .container_display .info_text {
@@ -181,13 +188,14 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 500px;
+    width: 700px;
     height: 500px;
     margin-bottom: 100px;
 }
 
 .container_display .word {
     margin-bottom: 100px;
+    font-family: Montserrat, sans-serif;
     font-size: 2em;
     letter-spacing: 0.5em;
 }
@@ -204,6 +212,7 @@ body {
     height: 40px;
     padding: 10px;
     text-align: center;
+    font-family: Montserrat, sans-serif;
     font-size: 1.5em;
     border: none;
     border-radius: 25px;
@@ -247,7 +256,7 @@ body {
 }
 
 /* ---------- */
-/* MODAL INFO*/
+/* MODAL INFO */
 /* ---------- */
 
 .container_modal_info {
@@ -293,11 +302,16 @@ body {
 .box_modal_info h3 {
     margin: 10px 0;
     font-size: 1.4em;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
 }
 
 .box_modal_info p,
 .box_modal_info li
  {
+    margin-left: 20px;
+    font-size: 1.1em;
     font-weight: 600;
 }
 
@@ -309,6 +323,8 @@ body {
 
 .box_modal_info strong {
     font-style: italic;
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 .box_modal_info ul {
@@ -320,8 +336,9 @@ body {
 }
 
 .box_modal_info button {
-    width: 70px;
+    width: 80px;
     height: 25px;
+    font-weight: 600;
     border: none;
     border-radius: 25px;
     background: orange;
@@ -342,7 +359,7 @@ body {
 }
 
 /* --------- */
-/* MODAL WIN*/
+/* MODAL WIN */
 /* --------- */
 
 .container_modal_win {
