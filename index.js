@@ -14,9 +14,9 @@ fetch("wordsList.txt")
 
     document.querySelector(".word").textContent = worldHidden;
 
-    let guessInput = document.querySelector(".btn_input");
-    let submitButton = document.querySelector(".submit");
-    let result = document.querySelector(".result");
+    const guessInput = document.querySelector(".btn_input");
+    const submitButton = document.querySelector(".submit");
+    const result = document.querySelector(".result");
     const restart = document.querySelector(".restart_word");
     const resetButton = document.querySelector(".button_reset");
     const confirmYes = document.querySelector(".confirm_yes");
@@ -114,7 +114,7 @@ fetch("wordsList.txt")
                     localStorage.setItem("try", counterTry)
                 }
             } catch {
-                alert("Erreur recup LS")
+                alert("Erreur")
             }
 
             document.querySelector(".word").textContent = worldHidden;
@@ -135,7 +135,7 @@ fetch("wordsList.txt")
                     }
                 }
             } catch {
-                alert("Erreur win LS")
+                alert("Erreur")
             }
         }        
 
