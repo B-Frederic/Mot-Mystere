@@ -1,0 +1,28 @@
+@media (max-width: 900px) {
+
+    body {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+        grid-template-areas:
+            "aside aside aside aside aside aside"    
+            "display display display display display display"    
+            "display display display display display display"    
+            "display display display display display display"    
+            "display display display display display display"    
+            "realization realization realization realization realization realization"    
+        ;
+    }
+
+    .container_aside {
+        grid-area: aside;
+    }
+
+    .container_realization {
+        grid-area: realization;
+    }
+
+    .container_display {
+        grid-area: display;
+    }
+}
