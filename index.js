@@ -114,7 +114,7 @@ fetch("wordsList.txt")
                     localStorage.setItem("try", counterTry)
                 }
             } catch {
-                alert("Erreur recup LS")
+                alert("Erreur de récupération des scores")
             }
 
             document.querySelector(".word").textContent = worldHidden;
@@ -135,7 +135,7 @@ fetch("wordsList.txt")
                     }
                 }
             } catch {
-                alert("Erreur win LS")
+                alert("Erreur de la récupération de 'victoire'")
             }
         }        
 
