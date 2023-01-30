@@ -21,8 +21,8 @@ fetch("wordsList.txt")
     const resetButton = document.querySelector(".button_reset");
     const confirmYes = document.querySelector(".confirm_yes");
     const confirmToCancel = document.querySelector(".confirm_to_cancel");
-    const modalConfirm = document.querySelector(".container_confirm_modal");
-    const overlayConfirm = document.querySelector(".overlay_confirm_modal");
+    const modalConfirm = document.querySelector(".container_modal_confirm");
+    const overlayConfirm = document.querySelector(".overlay_modal_confirm");
     
     guessInput.addEventListener("keydown", (e) => {
         if(e.code === "Enter") {
