@@ -246,3 +246,17 @@
         grid-template-columns: 1fr 5fr;
     }
 }
+
+@media (min-height: 600px){
+    /* ------- */
+    /* DISPLAY */
+    /* ------- */
+
+    .container_display .info_display {
+        padding-bottom: 60px;
+    }
+
+    .container_display .word {
+        margin-bottom: 50px;
+    }
+}
