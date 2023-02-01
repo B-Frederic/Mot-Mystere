@@ -16,6 +16,11 @@
             <h1 class="info_title">Mot mystère</h1>
             <p class="info_text">Si vous voulez en savoir plus sur ce projet ou sur moi-même : <button class="info_btn">Plus d'infos</button></p>
         </div>
+        <div class="box_letter_try">
+            <p>Lettre déjà joué:</p>
+            <ul class="add_letter">
+            </ul>
+        </div>
         <div class="box_display">
             <p class="word">___</p>
             <div class="box_input">
@@ -29,11 +34,12 @@
         </div>
     </section>
     <aside class="container_aside">
-        <div>
+        <div>        
+            <ion-icon class="icon_settings" name="settings-outline"></ion-icon>
             <p class="score">Score:</p>
             <div class="box_score">
                 <div class="box_try">
-                    <h2 class="aside_title">Essai(s)</h2>
+                    <h2 class="aside_title">Échec(s)</h2>
                     <p class="count_try">0</p>
                 </div>
                 <div class="box_word">
@@ -64,7 +70,9 @@
         <div class="overlay"></div>
         <div class="box_modal_win">
             <h2 class="title_modal"><i class="em em-partying_face" aria-role="presentation" aria-label="FACE WITH PARTY HORN AND PARTY HAT"></i>Félicitations<i class="em em-partying_face" aria-role="presentation" aria-label="FACE WITH PARTY HORN AND PARTY HAT"></i></h2>
-            <p class="text_modal">Tu as trouvé le mot mystère !<i class="em em-sunglasses" aria-role="presentation" aria-label="SMILING FACE WITH SUNGLASSES"></i></p>
+            <p class="text_modal">Tu as trouvé le mot mystère ! <i class="em em-sunglasses" aria-role="presentation" aria-label="SMILING FACE WITH SUNGLASSES"></i></p>
+            <p class="span_modal">" <span class="found_word"></span> " </p>
+            <br>
             <button class="restart_word">Continuer</button>
         </div>
     </section>

@@ -3,12 +3,13 @@
     /* DISPLAY */
     /* ------- */
 
-    .container_display .info_display {
-        padding-bottom: 190px;
+    .container_display .word {
+        margin: 20px 0 50px;
+        font-size: 1.1em;
     }
 
-    .container_display .word {
-        font-size: 1.1em;
+    .container_display .box_button p {
+        margin: 20px 0 50px;
     }
 
     /* ---------- */
@@ -26,8 +27,11 @@
 
     .container_modal_win .box_modal_win {
         width: 350px;
-        height: 300px;
         border-radius: 25px;
+    }
+
+    .box_modal_win .span_modal {
+        margin-bottom: 20px;
     }
 
     /* ------------- */
@@ -46,6 +50,14 @@
     /* DISPLAY */
     /* ------- */
 
+    .box_letter_try p {
+        font-weight: bold;
+    }
+    
+    .box_letter_try .letter_tried {
+        font-size: 1.4em;
+    }
+
     .container_display .word {
         font-size: 1.1em;
     }
@@ -62,14 +74,17 @@
     /* --------- */
     /* MODAL WIN */
     /* --------- */
+    .container_modal_win .box_modal_win {
+        width: 400px;
+        border-radius: 50%;
+    }
 
     .box_modal_win .title_modal {
         margin: 20px 0;
     }
 
-    .container_modal_win .box_modal_win {
-        width: 400px;
-        border-radius: 50%;
+    .box_modal_win .span_modal {
+        margin-bottom: 0;
     }
 
     /* ------------- */
@@ -98,11 +113,6 @@
     /* DISPLAY */
     /* ------- */
 
-    .container_display .info_display {
-        padding-bottom: 200px;
-        text-align: center;
-    }
-
     .container_display .info_title {
         font-size: 6em;
     }
@@ -124,15 +134,19 @@
     /* MODAL WIN */
     /* --------- */
 
-    .box_modal_win .title_modal {
-        font-size: 3em;
-        margin: 60px 0;
-    }
-
     .container_modal_win .box_modal_win {
         width: 600px;
         height: 400px;
         border-radius: 50%;
+    }
+
+    .box_modal_win .title_modal {
+        font-size: 3em;
+        margin: 60px 0 20px;
+    }
+
+    .box_modal_win .span_modal {
+        margin-bottom: 20px;
     }
 
     /* ------------- */
@@ -177,6 +191,14 @@
         font-size: 8em;
         color: #FE5629;
         -webkit-text-stroke: 1px #000;
+    }
+
+    .container_display .box_letter_try {
+        padding-bottom: 100px;
+    }
+
+    .box_letter_try .letter_tried {
+        font-size: 1.4em;
     }
 
     .container_display .word {
@@ -235,6 +257,7 @@
     body {
         grid-template-columns: 1.2fr 5fr;
     }
+
 }
 
 @media (min-width: 1400px) {
@@ -247,16 +270,20 @@
     }
 }
 
-@media (min-height: 600px){
+@media (max-height: 660px){
     /* ------- */
     /* DISPLAY */
     /* ------- */
 
     .container_display .info_display {
-        padding-bottom: 60px;
+        padding-bottom: 30px;
+    }
+
+    .container_display .info_title {
+        margin: 10px 0;
     }
 
     .container_display .word {
-        margin-bottom: 50px;
+        margin-bottom: 20px;
     }
 }

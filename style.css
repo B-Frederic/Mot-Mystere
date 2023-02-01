@@ -38,8 +38,18 @@ body {
 /* ----- */
 
 .container_aside {
+    position: relative;
     grid-area: aside;
     max-width: 100%;
+}
+
+.container_aside .icon_settings {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1.8em;
+    color: #fff;
 }
 
 .container_aside .box_score {
@@ -65,6 +75,11 @@ body {
 
 .box_score .box_try {
     margin: 0 20px;
+}
+
+.box_score p {
+    font-size: 1.4em;
+    font-weight: bold;
 }
 
 .box_button_reset {
@@ -103,7 +118,7 @@ body {
 }
 
 .container_display .info_display {
-    padding-bottom: 100px;
+    padding-bottom: 60px;
     text-align: center;
 }
 
@@ -138,6 +153,27 @@ body {
     background: #ccc;
 }
 
+.container_display .box_letter_try {
+    opacity: 0;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.box_letter_try p {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.box_letter_try .letter_tried {
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 1.2em;
+    color: green;
+    list-style-type: none;
+}
+
 .container_display .box_display {
     display: flex;
     align-items: center;
@@ -146,7 +182,7 @@ body {
 }
 
 .container_display .word {
-    margin-bottom: 90px;
+    margin: 20px 0 20px;
     padding: 5px;
     font-family: Montserrat, sans-serif;
     font-size: 1em;
@@ -389,15 +425,21 @@ body {
     top: 50%;
     left: 50%;
     width: 300px;
-    height: 300px;
+    height: 350px;
     padding: 30px;
     background-image: radial-gradient(circle at 50% 50%, #ffffd6 0, #ffffc7 12.5%, #ffffba 25%, #fff5ac 37.5%, #f2d59d 50%, #d3b78f 62.5%, #b69d83 75%, #9c8878 87.5%, #85776e 100%);
     border-radius: 25px;
     transform: translate(-50%, -50%);
 }
 
+.box_modal_win .found_word {
+    font-weight: bolder;
+    font-size: 2em;
+    font-style: italic;
+}
+
 .box_modal_win .em {
-    margin: 0 20px;
+    margin: 10px 20px 0;
     font-size: 0.5em;
 }
 
@@ -407,6 +449,7 @@ body {
 
 .box_modal_win .em-sunglasses {
     font-size: 0.8em;
+    margin-bottom: 20px;
 }
 
 .box_modal_win .title_modal{
@@ -415,7 +458,7 @@ body {
 }
 
 .box_modal_win .title_modal {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 2.3em;
     font-style: italic;
     color: #fff;
@@ -423,8 +466,7 @@ body {
 }
 
 .box_modal_win .text_modal {
-    margin-bottom: 40px;
-    font-size: 1.8em;
+    font-size: 2em;
     font-style: italic;
     text-align: center;
 }

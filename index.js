@@ -76,26 +76,59 @@ fetch("wordsList.txt")
         countWord.textContent = counterWord;
     }
     
+    let wordSplit = wordToGuess.split("");
+    
+    function followTried() {
+        const addLetter = document.querySelector(".add_letter");
+        const li = document.createElement("li");
+        const guess = guessInput.value.toLocaleLowerCase();
+        const letter = document.createTextNode(guess);
+
+        li.appendChild(letter);
+        li.classList.add("letter_tried");
+        
+        addLetter.appendChild(li);
+
+        if(wordSplit.indexOf(guess) === -1){
+            li.style.color = "red";
+        }
+    }
+
+    function listLetterTried() {
+        const container = document.querySelector(".box_letter_try")
+        container.style.opacity = "1";
+    }
+
+    let letterTab = [];
+
     function submitInput() {
         
         let guess = guessInput.value.toLocaleLowerCase();
-        let regex = /^[a-zA-ZáàâäãçéèêëíìîïñóòôöõúùûüýÿÁÀÂÄÃÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸ-]$/
-    
+        let regex = /^[a-zA-ZáàâäãçéèêëíìîïñóòôöõúùûüýÿÁÀÂÄÃÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸ-]$/;
+
         if(guess.length > 1){
             result.textContent = "Veuillez saisir qu'une seul lettre.";
             result.style.opacity = "1";
     
+        } else if (letterTab.indexOf(guess) !== -1) {
+                result.textContent = "Vous avez déjà fais cette saisie.";
+                result.style.opacity = "1";
+
         } else if(guess.length === 0) {
             result.textContent ="Champ vide. Veuillez saisir une lettre.";
             result.style.opacity = "1";
     
         } else if(guess != guess.match(regex)) {
-            result.textContent = "Veuillez saisir que des lettres";
+            result.textContent = "Veuillez saisir que des lettres ou un '-'.";
             result.style.opacity = "1";
 
         } else {
             
             result.style.opacity = "0";
+
+            followTried();
+            listLetterTried();
+            letterTab.push(guess);
 
             for(let i = 0; i < wordLength; i++){
                 if(wordToGuess[i] === guess){
@@ -103,33 +136,40 @@ fetch("wordsList.txt")
                 }
             }
 
+
             try{
-                if(getTry != null){
-                    let newSetTry = 1 + parseInt(getTry) + counterTry++;
-                    countTry.textContent = newSetTry;
-                    localStorage.setItem("try", newSetTry);
-                    
-                } else {
-                    countTry.textContent = 1 + counterTry++;
-                    localStorage.setItem("try", counterTry)
+
+                if(wordSplit.indexOf(guess) === -1){
+                    if(getTry != null){
+                        let newSetTry = 1 + parseInt(getTry) + counterTry++;
+                        countTry.textContent = newSetTry;
+                        localStorage.setItem("try", newSetTry);
+                    } else {
+                        countTry.textContent = 1 + counterTry++;
+                        localStorage.setItem("try", counterTry)
+                    }
                 }
+
             } catch {
                 alert("Erreur de récupération des scores")
             }
 
             document.querySelector(".word").textContent = worldHidden;
     
-        const winnerModal = document.querySelector(".container_modal_win");
+            const winnerModal = document.querySelector(".container_modal_win");
+            const foundWord = document.querySelector(".found_word");
 
             try{
                 if(worldHidden === wordToGuess){
                     if(getWord != null){
                         let newSetWord = parseInt(getWord) + 1;
                         countWord.textContent = newSetWord;
+                        foundWord.textContent = wordToGuess;
                         winnerModal.style.display = "flex";
                         localStorage.setItem("word", newSetWord);
                     } else {
                         countWord.textContent = counterWord++;
+                        foundWord.textContent = wordToGuess;
                         winnerModal.style.display = "flex";
                         localStorage.setItem("word", counterWord);
                     }
