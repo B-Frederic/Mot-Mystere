@@ -5,9 +5,9 @@ fetch("wordsList.txt")
     let listWord = data.split("\n");
     let randomIndex = Math.floor(Math.random() * listWord.length);
     const wordToGuess = listWord[randomIndex].toLocaleLowerCase();
-    let wordLength = wordToGuess.length;
     let worldHidden = "";
-
+    let wordLength = wordToGuess.length;
+    
     for(let i = 0; i < wordLength; i++){
         worldHidden += "_";
     }
@@ -23,7 +23,7 @@ fetch("wordsList.txt")
     const confirmToCancel = document.querySelector(".confirm_to_cancel");
     const modalConfirm = document.querySelector(".container_modal_confirm");
     const overlayConfirm = document.querySelector(".overlay_modal_confirm");
-    
+
     guessInput.addEventListener("keydown", (e) => {
         if(e.code === "Enter") {
             submitInput();
@@ -136,7 +136,6 @@ fetch("wordsList.txt")
                 }
             }
 
-
             try{
 
                 if(wordSplit.indexOf(guess) === -1){
@@ -187,6 +186,8 @@ const infoBtn = document.querySelector(".info_btn");
 const infoModal = document.querySelector(".container_modal_info");
 const iconClose = document.querySelector(".icon_close");
 const overlayModalInfo = document.querySelector(".overlay_modal_info");
+
+/* Modal info */
 
 infoBtn.addEventListener("click", () => {
     infoModal.style.display = "flex";

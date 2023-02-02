@@ -43,15 +43,6 @@ body {
     max-width: 100%;
 }
 
-.container_aside .icon_settings {
-    display: none;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 1.8em;
-    color: #fff;
-}
-
 .container_aside .box_score {
     display: flex;
     align-items: center;
@@ -290,9 +281,9 @@ body {
     color: #000;
 }
 
-/* ------ */
-/* MODALS */
-/* ------ */
+/* ---------------- */
+/* ---- MODALS ---- */
+/* ---------------- */
 
 /* ---------- */
 /* MODAL INFO */
@@ -353,6 +344,10 @@ body {
     margin-left: 10px;
     font-size: 1.1em;
     font-weight: 600;
+}
+
+.box_modal_info .box_update {
+    margin: 10px 0;
 }
 
 .box_modal_info .info_name {
@@ -523,8 +518,9 @@ body {
 }
 
 .box_modal_confirm h3 {
-    font-size: 1.4em;
     margin-bottom: 30px;
+    text-align: center;
+    font-size: 1.4em;
 }
 
 .box_modal_confirm .box_confirm {
