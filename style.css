@@ -18,8 +18,9 @@
 body {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 5fr 1fr;
+    grid-template-rows: 1fr 1fr 5fr 1fr;
     grid-template-areas:
+    "header"
     "aside"    
     "display"    
     "realization"    
@@ -29,15 +30,12 @@ body {
     background-image: radial-gradient(circle at 120.71% 50%, #ddffaf 0, #e2fe9d 8.33%, #e7f28b 16.67%, #eae678 25%, #eed764 33.33%, #f0c750 41.67%, #f2b53c 50%, #f4a22b 58.33%, #f68f20 66.67%, #f97b1d 75%, #fc6722 83.33%, #ff512b 91.67%, #ff3837 100%);
 }
 
-.container_display {
-    grid-area: display;
-}
-
 /* ----- */
 /* ASIDE */
 /* ----- */
 
 .container_aside {
+    position: relative;
     grid-area: aside;
     max-width: 100%;
 }
@@ -67,14 +65,19 @@ body {
     margin: 0 20px;
 }
 
+.box_score p {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
 .box_button_reset {
     text-align: center;
 }
 
 .container_aside .button_reset {
-    width: 120px;
-    height: 40px;
-    margin-top: 20px;
+    width: 80px;
+    height: 35px;
+    margin: 20px 0 30px;
     font-size: 0.9em;
     color: #fff;
     background: rgb(255, 0, 0);
@@ -90,37 +93,35 @@ body {
     box-shadow: 0 0 10px rgba(18, 18, 18, 0.8);
 }
 
-/* ------- */
-/* DISPLAY */
-/* ------- */
+/* ------ */
+/* HEADER */
+/* ------ */
 
-.container_display {
-    grid-area: display;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+.container_header {
+    grid-area: header;
+    border-bottom: 1px solid #fff;
 }
 
-.container_display .info_display {
-    padding-bottom: 100px;
+.container_header .box_header {
+    margin-bottom: 20px;
     text-align: center;
 }
 
-.container_display .info_title {
-    margin: 30px 0 10px;
+.container_header .header_title {
+    margin: 20px;
+    line-height: 0.8em;
     font-family: Dancing Script, sans-serif;
-    font-size: 5em;
+    font-size: 6em;
     color: #FE5629;
     -webkit-text-stroke: 1px #000;
 }
 
-.container_display .info_text {
+.container_header .header_text {
     padding: 0 10px;
     font-style: italic;
 }
 
-.container_display .info_btn {
+.container_header .header_btn {
     width: 90px;
     height: 25px;
     margin-left: 10px;
@@ -133,9 +134,42 @@ body {
     cursor: pointer;
 }
 
-.container_display .info_btn:hover {
+.container_header .header_btn:hover {
     color: #fff;
     background: #ccc;
+}
+
+/* ------- */
+/* DISPLAY */
+/* ------- */
+
+.container_display {
+    grid-area: display;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container_display .box_letter_try {
+    opacity: 0;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.box_letter_try p {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.box_letter_try .letter_tried {
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 1.2em;
+    color: green;
+    list-style-type: none;
 }
 
 .container_display .box_display {
@@ -146,7 +180,7 @@ body {
 }
 
 .container_display .word {
-    margin-bottom: 90px;
+    margin: 20px 0 20px;
     padding: 5px;
     font-family: Montserrat, sans-serif;
     font-size: 1em;
@@ -254,9 +288,9 @@ body {
     color: #000;
 }
 
-/* ------ */
-/* MODALS */
-/* ------ */
+/* ---------------- */
+/* ---- MODALS ---- */
+/* ---------------- */
 
 /* ---------- */
 /* MODAL INFO */
@@ -317,6 +351,10 @@ body {
     margin-left: 10px;
     font-size: 1.1em;
     font-weight: 600;
+}
+
+.box_modal_info .box_update {
+    margin: 10px 0;
 }
 
 .box_modal_info .info_name {
@@ -389,15 +427,21 @@ body {
     top: 50%;
     left: 50%;
     width: 300px;
-    height: 300px;
+    height: 350px;
     padding: 30px;
     background-image: radial-gradient(circle at 50% 50%, #ffffd6 0, #ffffc7 12.5%, #ffffba 25%, #fff5ac 37.5%, #f2d59d 50%, #d3b78f 62.5%, #b69d83 75%, #9c8878 87.5%, #85776e 100%);
     border-radius: 25px;
     transform: translate(-50%, -50%);
 }
 
+.box_modal_win .found_word {
+    font-weight: bolder;
+    font-size: 2em;
+    font-style: italic;
+}
+
 .box_modal_win .em {
-    margin: 0 20px;
+    margin: 10px 20px 0;
     font-size: 0.5em;
 }
 
@@ -407,6 +451,7 @@ body {
 
 .box_modal_win .em-sunglasses {
     font-size: 0.8em;
+    margin-bottom: 20px;
 }
 
 .box_modal_win .title_modal{
@@ -415,7 +460,7 @@ body {
 }
 
 .box_modal_win .title_modal {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 2.3em;
     font-style: italic;
     color: #fff;
@@ -423,8 +468,7 @@ body {
 }
 
 .box_modal_win .text_modal {
-    margin-bottom: 40px;
-    font-size: 1.8em;
+    font-size: 2em;
     font-style: italic;
     text-align: center;
 }
@@ -481,8 +525,9 @@ body {
 }
 
 .box_modal_confirm h3 {
-    font-size: 1.4em;
     margin-bottom: 30px;
+    text-align: center;
+    font-size: 1.4em;
 }
 
 .box_modal_confirm .box_confirm {
