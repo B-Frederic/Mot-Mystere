@@ -4,7 +4,7 @@ fetch("wordsList.txt")
 
 
     let wordList = data.split("\n");
-    let filterWordList = wordList.filter(word => word.length >= 3 && word.length <= 12);
+    let filterWordList = wordList.filter(word => word.length >= 3 && word.length <= 15);
     let randomIndex = Math.floor(Math.random() * filterWordList.length);
     const wordToGuess = filterWordList[randomIndex].toLocaleLowerCase();
     let worldHidden = "";
