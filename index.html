@@ -11,11 +11,13 @@
     <link rel="shortcut icon" type="image/png" href="/./assets/img/motmystere.png"/>
 </head>
 <body>
-    <section class="container_display">
-        <div class="info_display">
-            <h1 class="info_title">Mot mystère</h1>
-            <p class="info_text">Si vous voulez en savoir plus sur ce projet ou sur moi-même : <button class="info_btn">Plus d'infos</button></p>
+    <header class="container_header">
+        <div class="box_header">
+            <h1 class="header_title">Mot mystère</h1>
+            <p class="header_text">Si vous voulez en savoir plus sur ce projet ou sur moi-même : <button class="header_btn">Plus d'infos</button></p>
         </div>
+    </header>
+    <section class="container_display">
         <div class="box_letter_try">
             <p>Lettre déjà joué:</p>
             <ul class="add_letter">
@@ -34,11 +36,11 @@
         </div>
     </section>
     <aside class="container_aside">
-        <div>        
+        <div class="box_aside">        
             <p class="score">Score:</p>
             <div class="box_score">
                 <div class="box_try">
-                    <h2 class="aside_title">Échec(s)</h2>
+                    <h2 class="aside_title">Loupé(s)</h2>
                     <p class="count_try">0</p>
                 </div>
                 <div class="box_word">
@@ -47,8 +49,9 @@
                 </div>
             </div>
             <div class="box_button_reset">
-                <button class="button_reset">Réinitialiser</button>
+                <button class="button_reset">Reset</button>
             </div>
+
         </div>
     </aside>
     <section class="container_realization">
@@ -112,6 +115,12 @@
                         <li>Ajout du mot mystère trouvé sur la fenêtre "Félicitations"</li>
                     </ul>
                 </div>
+                <div class="box_update">
+                    <p class="info_date">Le 02/02/2023 :</p>    
+                    <ul>
+                        <li>Modification de l'agencement</li>
+                    </ul>
+                </div>
                 <h3>Information sur le jeu</h3>
                 <p>La liste des mots actuels est aux alentours des 22 700 mots, qui correspondent à une partie du dictionnaire Français. J'ai une liste de côté ayant plus de 136 000 mots, mais qu'il faudra que je vérifie avant de l'ajouter.</p>
             <h3>Design</h3>
@@ -147,7 +156,7 @@
             </div>
         </div>
     </section>
-        
+
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script> 
     <script nomodule src="https://unpkg .com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="index.js"></script>

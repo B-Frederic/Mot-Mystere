@@ -2,9 +2,11 @@ fetch("wordsList.txt")
 .then(res => res.text())
 .then(data => {
 
-    let listWord = data.split("\n");
-    let randomIndex = Math.floor(Math.random() * listWord.length);
-    const wordToGuess = listWord[randomIndex].toLocaleLowerCase();
+
+    let wordList = data.split("\n");
+    let filterWordList = wordList.filter(word => word.length >= 3 && word.length <= 12);
+    let randomIndex = Math.floor(Math.random() * filterWordList.length);
+    const wordToGuess = filterWordList[randomIndex].toLocaleLowerCase();
     let worldHidden = "";
     let wordLength = wordToGuess.length;
     
@@ -182,14 +184,12 @@ fetch("wordsList.txt")
     }
 });
 
-const infoBtn = document.querySelector(".info_btn");
+const headerBtn = document.querySelector(".header_btn");
 const infoModal = document.querySelector(".container_modal_info");
 const iconClose = document.querySelector(".icon_close");
 const overlayModalInfo = document.querySelector(".overlay_modal_info");
 
-/* Modal info */
-
-infoBtn.addEventListener("click", () => {
+headerBtn.addEventListener("click", () => {
     infoModal.style.display = "flex";
 })
 
