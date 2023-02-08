@@ -46,9 +46,9 @@
 
 @media (min-width: 425px){
 
-    /* ------- */
-    /* DISPLAY */
-    /* ------- */
+    /* ----- */
+    /* ASIDE */
+    /* ----- */
     
     .box_letter_try .letter_tried {
         font-size: 1.4em;
@@ -118,6 +118,11 @@
 
     .container_aside .button_reset {
         margin-left: 20px;
+    }
+
+    .container_aside .accentDisable,
+    .container_aside .accentActive {
+        margin: 10px 10px;
     }
 
     /* ------- */
@@ -211,6 +216,23 @@
         margin-top: 20px;
     }
 
+    .container_aside .button_reset {
+        margin-left: 0;
+    }
+
+    .container_aside .accentDisable,
+    .container_aside .accentActive {
+        margin: 10px 0;
+    }
+
+    .container_aside .box_letter_try {
+        margin-top: 20px;
+    }
+
+    .box_letter_try .letter_tried {
+        font-size: 1.4em;
+    }
+
     /* ------ */
     /* HEADER */
     /* ------ */
@@ -226,10 +248,6 @@
 
     .container_header .header_title {
         font-size: 8em;
-    }
-
-    .box_letter_try .letter_tried {
-        font-size: 1.4em;
     }
 
     .container_header .word {
