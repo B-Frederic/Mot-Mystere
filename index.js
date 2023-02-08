@@ -51,6 +51,8 @@ fetch("wordsList.txt")
         btnActiveAccent.style.border = "1px dashed #000";
         let verifyActive = true;
 
+        location.reload();
+
         if(btnDisableAccent.classList.contains("disable")){
             localStorage.setItem("accent", JSON.stringify(verifyActive));
         }
@@ -64,6 +66,8 @@ fetch("wordsList.txt")
         btnActiveAccent.style.background = "orange";
         btnActiveAccent.style.border = "1px solid #000";
         let verifyActive = false;
+
+        location.reload();
 
         if(!btnDisableAccent.classList.contains("disable")){
             localStorage.setItem("accent", JSON.stringify(verifyActive));
