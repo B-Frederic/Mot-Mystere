@@ -3,18 +3,73 @@ fetch("wordsList.txt")
 .then(data => {
 
 
+    const btnActiveAccent = document.querySelector(".accentActive");
+    const btnDisableAccent = document.querySelector(".accentDisable");
+
+    let accentVerify = JSON.parse(localStorage.getItem("accent"));
+
+    if(accentVerify){
+        btnDisableAccent.classList.add("disable");
+        btnDisableAccent.style.background = "orange";
+        btnDisableAccent.style.border = "1px solid #000";
+
+        btnActiveAccent.style.background = "#c4c4c4";
+        btnActiveAccent.style.border = "1px dashed #000";
+    } else {
+        btnDisableAccent.style.background = "#c4c4c4";
+        btnDisableAccent.style.border = "1px dashed #000";
+
+        btnActiveAccent.style.background = "orange";
+        btnActiveAccent.style.border = "1px solid #000";
+    }
+
     let wordList = data.split("\n");
     let filterWordList = wordList.filter(word => word.length >= 3 && word.length <= 15);
     let randomIndex = Math.floor(Math.random() * filterWordList.length);
-    const wordToGuess = filterWordList[randomIndex].toLocaleLowerCase();
+    let wordToGuess = accentVerify ? filterWordList[randomIndex].toLocaleLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "") : filterWordList[randomIndex].toLocaleLowerCase();
     let worldHidden = "";
     let wordLength = wordToGuess.length;
     
     for(let i = 0; i < wordLength; i++){
         worldHidden += "_";
     }
-
+    
     document.querySelector(".word").textContent = worldHidden;
+
+    // Delete accent
+
+
+    btnActiveAccent.addEventListener("click", activeAccent);
+    btnDisableAccent.addEventListener("click", disableAccent);
+    
+    function disableAccent(){
+        btnDisableAccent.classList.add("disable")
+        btnDisableAccent.style.background = "orange";
+        btnDisableAccent.style.border = "1px solid #000";
+
+        btnActiveAccent.style.background = "#c4c4c4";
+        btnActiveAccent.style.border = "1px dashed #000";
+        let verifyActive = true;
+
+        if(btnDisableAccent.classList.contains("disable")){
+            localStorage.setItem("accent", JSON.stringify(verifyActive));
+        }
+    }
+
+    function activeAccent(){
+        btnDisableAccent.classList.remove("disable");
+        btnDisableAccent.style.background = "#c4c4c4";
+        btnDisableAccent.style.border = "1px dashed #000";
+
+        btnActiveAccent.style.background = "orange";
+        btnActiveAccent.style.border = "1px solid #000";
+        let verifyActive = false;
+
+        if(!btnDisableAccent.classList.contains("disable")){
+            localStorage.setItem("accent", JSON.stringify(verifyActive));
+        }
+    }
+
 
     let guessInput = document.querySelector(".btn_input");
     let submitButton = document.querySelector(".submit");
@@ -92,13 +147,8 @@ fetch("wordsList.txt")
         addLetter.appendChild(li);
 
         if(wordSplit.indexOf(guess) === -1){
-            li.style.color = "red";
+            li.style.color = "rgb(143, 13, 13)";
         }
-    }
-
-    function listLetterTried() {
-        const container = document.querySelector(".box_letter_try")
-        container.style.opacity = "1";
     }
 
     let letterTab = [];
@@ -129,7 +179,6 @@ fetch("wordsList.txt")
             result.style.opacity = "0";
 
             followTried();
-            listLetterTried();
             letterTab.push(guess);
 
             for(let i = 0; i < wordLength; i++){

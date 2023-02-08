@@ -7,7 +7,7 @@
     <title>Mot Mystère</title>
     <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="media.css">
+    <link rel="stylesheet" href="mediaQueries.css">
     <link rel="shortcut icon" type="image/png" href="/./assets/img/motmystere.png"/>
 </head>
 <body>
@@ -18,11 +18,6 @@
         </div>
     </header>
     <section class="container_display">
-        <div class="box_letter_try">
-            <p>Lettre déjà joué:</p>
-            <ul class="add_letter">
-            </ul>
-        </div>
         <div class="box_display">
             <p class="word">___</p>
             <div class="box_input">
@@ -48,11 +43,20 @@
                     <p class="count_word">0</p>
                 </div>
             </div>
-            <div class="box_button_reset">
-                <button class="button_reset">Reset</button>
+                <div class="box_button_reset">
+                    <button class="button_reset">Reset</button>
+                </div>
             </div>
-
-        </div>
+            <div class="box_accent">
+                <p>Activer ou désactiver les accents :</p>
+                <button class="accentActive">Activer</button>
+                <button class="accentDisable">Désactiver</button>
+            </div>
+            <div class="box_letter_try">
+                <p>Lettre déjà joué:</p>
+                <ul class="add_letter">
+                </ul>
+            </div>
     </aside>
     <section class="container_realization">
         <div class="box_realization">
@@ -119,6 +123,13 @@
                     <p class="info_date">Le 02/02/2023 :</p>    
                     <ul>
                         <li>Modification de l'agencement</li>
+                    </ul>
+                </div>
+                <div class="box_update">
+                    <p class="info_date">Le 08/02/2023 :</p>    
+                    <ul>
+                        <li>Ajout de la possibilité de désactiver/activer les accents</li>
+                        <li>Modification de l'emplacement du suivi de lettre sur grand écran</li>
                     </ul>
                 </div>
                 <h3>Information sur le jeu</h3>
